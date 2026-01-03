@@ -26,7 +26,7 @@ jobs:
         with:
           push: true
           tags: |
-            yourname/bta-server:${{ github.ref_name }}
-            yourname/bta-server:latest
+            alexandrshapkin/bta-server:${{ github.ref_name }}
+            alexandrshapkin/bta-server:latest
           build-args: |
             BTA_VERSION=${{ github.ref_name }}

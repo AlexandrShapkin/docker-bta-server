@@ -112,4 +112,5 @@ if [ -n "${MC_BANNED_PLAYERS:-}" ]; then
     IFS=$OLD_IFS
 fi
 
+cd "$DATA_DIR"
 exec java $JAVA_OPTS -jar "$SERVER_JAR" --nogui

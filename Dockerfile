@@ -4,14 +4,13 @@ WORKDIR /opt/minecraft
 
 ARG BTA_VERSION
 ENV BTA_VERSION=${BTA_VERSION}
-
 ENV JAVA_OPTS="-Xms512M -Xmx2G"
 
-COPY server.properties.template .
-COPY entrypoint.sh .
+COPY entrypoint.sh /entrypoint.sh
+COPY server.properties.template /opt/minecraft/server.properties.template
 
-RUN chmod +x entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-VOLUME /opt/minecraft
+VOLUME /data
 
-ENTRYPOINT ["/opt/minecraft/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]

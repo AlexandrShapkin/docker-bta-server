@@ -1,10 +1,10 @@
 #!/bin/sh
 set -eu
 
-DATA_DIR=/opt/minecraft
-PROPS_FILE=$DATA_DIR/server.properties
-TEMPLATE=$DATA_DIR/server.properties.template
+DATA_DIR=/data
 SERVER_JAR=$DATA_DIR/server.jar
+PROPS_FILE=$DATA_DIR/server.properties
+TEMPLATE=/opt/minecraft/server.properties.template
 
 if [ ! -f "$SERVER_JAR" ]; then
     if [ -z "${BTA_VERSION:-}" ]; then
@@ -112,4 +112,4 @@ if [ -n "${MC_BANNED_PLAYERS:-}" ]; then
     IFS=$OLD_IFS
 fi
 
-exec java $JAVA_OPTS -jar $DATA_DIR/server.jar --nogui
+exec java $JAVA_OPTS -jar "$SERVER_JAR" --nogui

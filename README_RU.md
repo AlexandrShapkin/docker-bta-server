@@ -61,7 +61,7 @@ docker run -d \
   -e MC_OPS="Admin,Mod1" \
   -e MC_WHITELIST="Player1,Player2" \
   -e JAVA_OPTS="-Xms1G -Xmx2G" \
-  alexandrshapkin/bta-server:7.3_04
+  alexandrshapkin/bta-server:v7.3_04
 ```
 
 * `/srv/minecraft-data` на хосте будет содержать все данные сервера.
@@ -74,7 +74,7 @@ docker run -d \
 ```yaml
 services:
   minecraft:
-    image: alexandrshapkin/bta-server:7.3_04
+    image: alexandrshapkin/bta-server:v7.3_04
     ports:
       - "25565:25565"
     volumes:

@@ -4,6 +4,19 @@ set -eu
 DATA_DIR=/opt/minecraft
 PROPS_FILE=$DATA_DIR/server.properties
 TEMPLATE=$DATA_DIR/server.properties.template
+SERVER_JAR=$DATA_DIR/server.jar
+
+if [ ! -f "$SERVER_JAR" ]; then
+    if [ -z "${BTA_VERSION:-}" ]; then
+        echo "BTA_VERSION is not set"
+        exit 1
+    fi
+
+    echo "Downloading BTA server version $BTA_VERSION"
+    curl -fsSL \
+      -o "$SERVER_JAR" \
+      "https://github.com/Better-than-Adventure/bta-download-repo/releases/download/${BTA_VERSION}/bta.${BTA_VERSION}.server.jar"
+fi
 
 cp "$TEMPLATE" "$PROPS_FILE"
 

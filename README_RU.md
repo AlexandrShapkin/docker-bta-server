@@ -86,4 +86,4 @@ services:
     restart: unless-stopped
 ```
 
-[Docker Hub](https://hub.docker.com/repository/docker/alexandrshapkin/bta-server)
+[Docker Hub](https://hub.docker.com/r/alexandrshapkin/bta-server)
